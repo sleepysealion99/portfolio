@@ -4,9 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/styled": "^11.10.5",
+    "jquery": "^3.6.1",
+    "mdbreact": "^5.2.0",
+    "overlay": "^1.2.5",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "styled": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

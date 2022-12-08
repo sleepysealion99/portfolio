@@ -1,10 +1,8 @@
 import logo from './logo.svg';
-import './App.css';
+import './home.css';
 import react,  { useEffect, useState } from 'react';
-// import { Nav, NavLink, NavMenu } from "./NavbarElements";
-// import {Routes, Route, useNavigate, Link} from 'react-router-dom';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
+import { Nav, NavLink, NavMenu } from "./NavbarElements";
+import {Routes, Route, useNavigate, Link} from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
@@ -23,41 +21,86 @@ import { color } from 'overlay';
 
 const projectArr = [
   {
-      name: '007 Museum',
-      img: "/project1.png",
-      url: "https://sleepysealion99.github.io/redesign/"
+      name: 'avocado',
+      img: "/avocado-yog.png",
+      price: 5.95,
+      ice: 1,
+      gluten: 1,
   },
   {
-      name: 'bakery shop',
-      img: "/project2.png",
-      url: "https://irenesyr.github.io/react-studio/"
+      name: 'mochi ubec',
+      img: "/avocado-yog.png",
+      price: 6.35,
+      ice: 0,
+      gluten: 0,
   },
   {
-      name: 'milktea shop',
-      img: "/project3.png",
-      url: "https://sleepysealion99.github.io/milktea_shop/"
+      name: 'mochi oreo',
+      img: "/avocado-yog.png",
+      price: 6.25,
+      ice: 0,
+      gluten: 0,
   },
   {
-      name: 'iterative design',
-      img: "/project4.png",
-      url: "https://calmturtle124.github.io/Iterative/"
+      name: 'mochi chestnute',
+      img: "/avocado-yog.png",
+      price: 6.25,
+      ice: 0,
+      gluten: 0,
+  },
+  {
+      name: 'white peach oolong tea w.moussee',
+      img: "/avocado-yog.png",
+      price: 5.5,
+      ice: 1,
+      gluten: 0,
+  },
+  {
+      name: 'avomango sweet dew',
+      img: "/avocado-yog.png",
+      price: 6.5,
+      ice: 1,
+      gluten: 1,
   },
 ];
 
-// const DisplayOver = styled.div({
-//   height: "100%",
-//   left: "0",
-//   position: "absolute",
-//   top: "0",
-//   width: "100%",
-//   transition: "background-color 350ms ease",
-//   backgroundColor: "transparent",
-//   padding: "20px 20px 0 20px",
-//   boxSizing: "border-box",
-//   "&:hover": {
-//     backgroundColor: "rgba(0,0,0,.5)",
-//   }
-// });
+const Navbar = () => {
+  return (
+    <>
+      <Nav>
+        <NavMenu>
+          <NavLink to="/about" activeStyle>
+            About
+          </NavLink>
+          <NavLink to="/contact" activeStyle>
+            Contact Us
+          </NavLink>
+          <NavLink to="/blogs" activeStyle>
+            Blogs
+          </NavLink>
+          <NavLink to="/sign-up" activeStyle>
+            Sign Up
+          </NavLink>
+        </NavMenu>
+      </Nav>
+    </>
+  );
+};
+
+const DisplayOver = styled.div({
+  height: "100%",
+  left: "0",
+  position: "absolute",
+  top: "0",
+  width: "100%",
+  transition: "background-color 350ms ease",
+  backgroundColor: "transparent",
+  padding: "20px 20px 0 20px",
+  boxSizing: "border-box",
+  "&:hover": {
+    backgroundColor: "rgba(0,0,0,.5)",
+  }
+});
 
 // const Paragraph = styled.p({
 //   transform: "translate3d(0,50px,0)",
@@ -90,12 +133,6 @@ const projectArr = [
 //   color: "black",
 // });
 
-function About() {
-  // 👇️ redirect to external URL
-  window.location.replace('https://google.com');
-
-  return null;
-}
 
 function App() {
 
@@ -114,28 +151,19 @@ function App() {
           
           <div className="head">
             <div className="name">
-              <h1>Sleepysealion99</h1>
+              <h1>Irene Shao</h1>
             </div>
-            <Nav
-              activeKey="/home"
-              onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-            >
-              <Nav.Item>
-                <Nav.Link href="/home">Active</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="profile">Link</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link eventKey="projects">Link</Nav.Link>
-              </Nav.Item>
-            </Nav>
           </div>
           <div className="main">
             <div className="profile">
-              <h2>Hi there! I'm Sleepysealion99.</h2>
-              <p>I'm a CS master student at Brown University. I have strong basis in multiple languages such as Python, C, Java, C++. 
-                I was graduated from UCSD with a bachelor degree in Computer Science. Welcome to checkout on some of my selected projects.</p>
+              <h2>Hi there! I'm Irene.</h2>
+              <p>I'm a CS master student at Brown University. I 
+
+Before that, I was at LinkedIn where I designed features to help hourly workers find work on LinkedIn. 
+
+When I'm not working, you can find me fulfilling my PNW dreams hiking to alpine lakes or paddle-boarding, stuffing myself at a restaurant, or watching a sunset!
+
+Check out my case studies below and feel free to send me an email or a message on Linkedin!</p>
             </div>
             <div className="projects">
               {projectData.map((item, index) => {
@@ -146,24 +174,18 @@ function App() {
                           backgroundImage: `url(${item.img})`
                         }}>
                           <div className="DisplayOver">
-                            {/* <div className="BigTitle">
+                            <div className="BigTitle">
                               <h2>{item.name}</h2>
-                            </div> */}
+                            </div>
                             <div className="Hover">
                               <div className="SubTitle">
-                                <h2>{item.name}</h2>
+                                <h2>You could vacation here!</h2>
                               </div>
                               <div className="Paragraph">
-                              <a href={item.url} target="_blank" rel="noreferrer">Click for more details about this really cool project!</a>
+                                <p>More description about this really cool random desert photo from
+                                unsplash!</p>
                               </div>
-                              {/* <Router>
-                                <div> 
-                                  <a href={item.url} target="_blank" rel="noreferrer">
-                                    website
-                                  </a>
-                                </div>
-                              </Router>
-                              <div className="CTA"><a>View More +</a></div> */}
+                              <div className="CTA"><a>View More +</a></div>
                             </div>
                           </div>
                         </div>
@@ -173,7 +195,7 @@ function App() {
             </div>
           </div>
           <div className="footer">
-              <h1>Crafted by Sleepysealion99</h1>
+              <h1>Crafted by Irene Shao</h1>
           </div>
         </div>
       </header>
